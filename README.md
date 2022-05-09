@@ -20,6 +20,9 @@ Google Dev Tools
 👤David Verde Alvarez
 👤Tinashe Murambinda
 
+## Live Version
+https://unyielding1.github.io/Portfolio-pair-programing/
+
 ## social Links
 
 GitHub: https://github.com/Unyielding1
