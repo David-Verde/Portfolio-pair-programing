@@ -456,7 +456,7 @@
     color: #3d4ee4;
   }
 
-  #portfolioPopup {
+  #portfolio-popup {
     position: fixed;
     z-index: 1;
     left: 0;
