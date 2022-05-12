@@ -1,10 +1,9 @@
-const form = document.querySelector('#form');
 const formName = document.querySelector('#name');
 const email = document.querySelector('#email');
 const formtext = document.querySelector('#text');
-const emailErrorMsg = document.querySelector('#email-error-msg');
 const inputData = {};
 const storage = window.localStorage;
+/**@author david verde and Ogiogio Victor */
 function storageAvailable(type) {
   let storage;
   try {
@@ -15,10 +14,10 @@ function storageAvailable(type) {
     return true;
   } catch (e) {
     return e instanceof DOMException && (
-      e.code === 22
-      || e.code === 1014
-      || e.name === 'QuotaExceededError'
-      || e.name === 'NS_ERROR_DOM_QUOTA_REACHED') && (storage && storage.length !== 0);
+      e.code === 22 ||
+      e.code === 1014 ||
+      e.name === 'QuotaExceededError' ||
+      e.name === 'NS_ERROR_DOM_QUOTA_REACHED') && (storage && storage.length !== 0);
   }
 }
 
