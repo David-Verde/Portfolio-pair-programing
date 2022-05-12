@@ -3,7 +3,8 @@ const email = document.querySelector('#email');
 const formtext = document.querySelector('#text');
 const inputData = {};
 const storage = window.localStorage;
-/**@author david verde and Ogiogio Victor */
+/**@returns form data */
+r
 function storageAvailable(type) {
   let storage;
   try {
