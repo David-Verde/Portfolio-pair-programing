@@ -121,13 +121,13 @@
       </div>
       <form action="https://formspree.io/f/xjvjejyb" id="form" class="form" method="post">
         <ul class="inner-list">
-          <li><input type="text" class="form-control" placeholder="Full name" name="name" id="name" size="40" maxlength="30">
+          <li><input type="text" class="form-control" placeholder="Full name" name="name" id="name" size="40" maxlength="30" data-oops>
           </li>
           <li> </li>
-          <li><input type="email" class="form-control" name="email" id="email" placeholder="Email address">
+          <li><input type="email" class="form-control" name="email" id="email" placeholder="Email address" data-oops>
           </li>
           <li> </li>
-          <li><textarea name="text" class="form-control" id="text" placeholder="Message"></textarea></li>
+          <li><textarea name="text" class="form-control" id="text" placeholder="Message" data-oops></textarea></li>
           <li> </li>
           <li class="flex-item6" id="submit-btn"><button type="submit">Get In Touch</button></li>
           <li class="shape"><img src="./images/Shape.png" alt="shape"></li>
@@ -135,11 +135,30 @@
       </form>
     </section>
   </main>
+  <script src="oops.min.js"></script>
+    <script>
+    
+        var ps = new Oops();
+        
+        ps.start();
+        
+        var btn_s = document.getElementById("_submit");
+        var btn_r = document.getElementById("_reset");
+
+        btn_s.addEventListener("click",function(){
+            ps.clear();
+        });
+
+        btn_r.addEventListener("click",function(){
+            ps.clear();
+        });
+  
+  </script>
   <section class="worksPopup" id="portfolioPopup">
+    
   </section>
 
   <script src="js/main.js"></script>
-
 </body>
 
 
