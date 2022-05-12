@@ -3,8 +3,9 @@ const email = document.querySelector('#email');
 const formtext = document.querySelector('#text');
 const inputData = {};
 const storage = window.localStorage;
+
 /**@returns form data */
-r
+
 function storageAvailable(type) {
   let storage;
   try {
