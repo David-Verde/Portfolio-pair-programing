@@ -1,11 +1,9 @@
+/* eslint-disable require-jsdoc */
 const formName = document.querySelector('#name');
 const email = document.querySelector('#email');
 const formtext = document.querySelector('#text');
 const inputData = {};
 const storage = window.localStorage;
-
-/**@returns form data */
-
 function storageAvailable(type) {
   let storage;
   try {
@@ -19,7 +17,7 @@ function storageAvailable(type) {
       e.code === 22 ||
       e.code === 1014 ||
       e.name === 'QuotaExceededError' ||
-      e.name === 'NS_ERROR_DOM_QUOTA_REACHED') && (storage && storage.length !== 0);
+      e.name === 'ERROR_QUOTA_REACHED') && (storage && storage.length !== 0);
   }
 }
 
