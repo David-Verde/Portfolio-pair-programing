@@ -84,7 +84,7 @@ for (let i = 0; i < projectDetail.length; i += 1) {
   }
 
   const changeStyle = i === 1 ? 'work-1' : 'work-2';
-  
+
   document.querySelector('#portfolio').innerHTML += `<div class="main-container">
   <div class="grid-item" id="${changeStyle}">
     <div class="flex-item1"><img src="${projectDetail[i].imageMobile}" alt="my tonic project"></div>

@@ -1,5 +1,8 @@
 {
   "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-auto-fix": "^1.0.4",
+    "eslint-config-google": "^0.14.0",
     "stylelint": "^14.8.2",
     "stylelint-config-standard": "^25.0.0"
   }
