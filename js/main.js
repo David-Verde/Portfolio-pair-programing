@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const menuItem = document.querySelector('.mobile-item');
 const closeMobileItems = document.querySelectorAll('.closeMenu');
 const displayMobileMenu = () => {
