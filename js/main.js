@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const menuItem = document.querySelector('.mobile-item');
 const closeMobileItems = document.querySelectorAll('.closeMenu');
 const displayMobileMenu = () => {
@@ -82,8 +83,11 @@ for (let i = 0; i < projectDetail.length; i += 1) {
     experienceList += (k === 0) ? `<li><a href="#" class="canopy">${projectDetail[i].exprience[k]}</a></li>` : `<li><a href="#">${projectDetail[i].exprience[k]}</a></li>`;
     if (k !== projectDetail[i].exprience.length - 1) experienceList += '<li><a href="#"><img src="./images/Counter.png" alt="dot"></a></li>';
   }
+
+  const changeStyle = i === 1 ? 'work-1' : 'work-2';
+
   document.querySelector('#portfolio').innerHTML += `<div class="main-container">
-  <div class="grid-item" id="work-1">
+  <div class="grid-item" id="${changeStyle}">
     <div class="flex-item1"><img src="${projectDetail[i].imageMobile}" alt="my tonic project"></div>
     <div class="desk-item1"><img src="${projectDetail[i].image}" alt="my tonic project"></div>
     <div class="desk-col">
@@ -111,7 +115,7 @@ for (let i = 0; i < projectDetail.length; i += 1) {
   </div>`;
 }
 
-const popupModal = document.querySelector('#portfolioPopup');
+const popupModal = document.querySelector('#portfolio-popup');
 const displayPopupModal = (i) => {
   let tech = '';
   let techPop = '';
@@ -128,7 +132,7 @@ const displayPopupModal = (i) => {
   for (let k = 0; k < projectDetail[i].exprience.length; k += 1) {
     experienceList += (k === 0) ? `<li class="list-main">${projectDetail[i].exprience[k]}</li>` : `<li class="titles-item">${projectDetail[i].exprience[k]}</li>`;
   }
-  document.querySelector('#portfolioPopup').innerHTML = `
+  document.querySelector('#portfolio-popup').innerHTML = `
   <div class="works-flex">
       <div>
         <div class="works-flex-pop">
@@ -172,10 +176,6 @@ const displayPopupModal = (i) => {
 };
 document.querySelectorAll('.see-project').forEach((row) => row.addEventListener('click', () => displayPopupModal(row.getAttribute('data-index'))));
 
-const closeModal = document.querySelector('#portfolioPopup');
-const closePopupModal = () => {
-  closeModal.style.display = 'none';
-};
 /* End of display popup modal */
 
 /* Contact Form validation */
@@ -185,7 +185,6 @@ document.querySelector('#form').addEventListener('submit', (e) => {
   for (let i = 0; i < e.target.length; i += 1) {
     if (e.target[i].classList.contains('form-control')) {
       if (e.target[i].value === '') {
-        // e.target[i].nextElementSibling.style.display = 'block';
         e.target[i].parentElement.nextElementSibling.innerText = `Please enter your ${e.target[i].getAttribute('placeholder')}`;
         e.target[i].parentElement.nextElementSibling.style.color = 'red';
         e.preventDefault();
