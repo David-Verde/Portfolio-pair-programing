@@ -1,68 +1,14 @@
-/* eslint-disable require-jsdoc */
-const formName = document.querySelector('#name');
-const email = document.querySelector('#email');
-const formtext = document.querySelector('#text');
-const inputData = {};
-const storage = window.localStorage;
-function storageAvailable(type) {
-  let storage;
-  try {
-    storage = window[type];
-    const x = '__storage_test__';
-    storage.setItem(x, x);
-    storage.removeItem(x);
-    return true;
-  } catch (e) {
-    return e instanceof DOMException && (
-      e.code === 22 ||
-      e.code === 1014 ||
-      e.name === 'QuotaExceededError' ||
-      e.name === 'ERROR_QUOTA_REACHED') && (storage && storage.length !== 0);
+form.addEventListener('keyup', () => {
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      text: document.getElementById('text').value,
+    };
+    localStorage.setItem('formData', JSON.stringify(formData));
   }
-}
-
-function retrieveFormData() {
-  if (storageAvailable('localStorage')) {
-    const formDataString = storage.getItem('formData');
-    const formData = JSON.parse(formDataString);
-    return formData;
-  }
-  return false;
-}
-
-function populateForm() {
-  const formData = retrieveFormData();
-  if (formData) {
-    if (formData.name) {
-      formName.value = formData.name;
-    }
-    if (formData.email) {
-      email.value = formData.email;
-    }
-    if (formData.text) {
-      formtext.value = formData.text;
-    }
-  }
-}
-populateForm();
-
-formName.addEventListener('change', () => {
-  inputData.name = formName.value;
-  inputData.email = email.value;
-  inputData.text = formtext.value;
-  storage.setItem('formData', JSON.stringify(inputData));
-});
-
-email.addEventListener('change', () => {
-  inputData.name = formName.value;
-  inputData.email = email.value;
-  inputData.text = formtext.value;
-  storage.setItem('formData', JSON.stringify(inputData));
-});
-
-formtext.addEventListener('change', () => {
-  inputData.name = formName.value;
-  inputData.email = email.value;
-  inputData.text = formtext.value;
-  storage.setItem('formData', JSON.stringify(inputData));
-});
+  );
+    const formData = JSON.parse(localStorage.getItem('formData'));
+      document.getElementById('name').value = formData.name;
+      document.getElementById('email').value = formData.email;
+      document.getElementById('text').value = formData.text;
+  
