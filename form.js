@@ -13,7 +13,7 @@ document.getElementById('email').value = formData.email;
 document.getElementById('text').value = formData.text;
 
 window.onload = () => {
-  let savedFormData = localStorage.getItem('contactFormInput');
+  let savedFormData = localStorage.getItem('formData');
   savedFormData = JSON.parse(savedFormData);
   // Check if the form data object is found on localStorage
   if (savedFormData) {
