@@ -11,7 +11,7 @@ document.querySelector('.openMenu').addEventListener('click', displayMobileMenu)
 closeMobileItems.forEach(((element) => element.addEventListener('click', closeMobileMenu)));
 
 /* Project Detail objects */
-const projectDetail = [{
+const  = [{
   title: 'Tonic',
   exprience: ['CANOPY', 'Back End Dev', '2015'],
   desription: 'A daily selection of privately personalized reads; no accounts or sign-ups required.',
