@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 const menuItem = document.querySelector('.mobile-item');
 const closeMobileItems = document.querySelectorAll('.closeMenu');
 const displayMobileMenu = () => {
@@ -82,8 +83,11 @@ for (let i = 0; i < projectDetail.length; i += 1) {
     experienceList += (k === 0) ? `<li><a href="#" class="canopy">${projectDetail[i].exprience[k]}</a></li>` : `<li><a href="#">${projectDetail[i].exprience[k]}</a></li>`;
     if (k !== projectDetail[i].exprience.length - 1) experienceList += '<li><a href="#"><img src="./images/Counter.png" alt="dot"></a></li>';
   }
+
+  const changeStyle = i === 1 ? 'work-1' : 'work-2';
+
   document.querySelector('#portfolio').innerHTML += `<div class="main-container">
-  <div class="grid-item" id="work-1">
+  <div class="grid-item" id="${changeStyle}">
     <div class="flex-item1"><img src="${projectDetail[i].imageMobile}" alt="my tonic project"></div>
     <div class="desk-item1"><img src="${projectDetail[i].image}" alt="my tonic project"></div>
     <div class="desk-col">
