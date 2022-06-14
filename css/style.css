@@ -422,7 +422,7 @@ button:active {
   color: white;
 }
 
-#portfolioPopup {
+#portfolio-popup {
   position: fixed;
   z-index: 1;
   left: 0;
